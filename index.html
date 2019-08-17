@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> Array </title>
+		<title> ArraySort </title>
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<h1> Массивы </h1>
+		<h1> Сортировка Дата/Время </h1>
 		
 	<script>
-		function setMass(mass){ // функция должна принять строку, рапознать числа и вернуть массив из чисел
-			var newMass = [];
-			var j=0;
-
-			for (var i = 0; i < mass.length; i++) {
-
-				if (mass[i] !== ' '){
-					mass[i] = Number(mass[i]);
-					console.log(mass[i] , typeof(mass[i]));
-						
-					if (typeof(mass[i] === 'number' && mass[i] === mass[i])) {
-						newMass[j] = (mass[i]);
-						j = j+1;
-					}
-				}
-			}
-			return newMass;
-		}
-		var string = '1, 2, 3, 4, 5, 6, 7, 8, 9';
-		console.log (setMass(string));
-		
-		
 	
+		var users = [
+			{
+			   date: '31/09/2019',
+			  msg: 'him kill him repeat',
+			 },
+		 	{
+			   date: '30/09/2019',
+			  msg: 'him kill Alisa',
+			 },
+			 {
+			  date: '12/03/2019',
+			  msg: 'Some message here',
+			 },
+			 {
+			  date: '30/07/2019',
+			  msg: 'About Me',
+			 },
+			{
+			  date: '31/07/2019',
+			  msg: 'Ilon Mask studi in Hillel',
+			},
+			 {
+			  date: '31/07/2019',
+			  msg: 'Apollon 11 was born.',
+			 },
+			 {
+			  date: '30/09/2019',
+			  msg: 'Alisa kill him',
+			 },
+			 {
+			   date: '30/09/2019',
+			  msg: 'him kill him',
+			 },
+			 {
+			  date: '29/07/2019',
+			  msg: 'Venona kill Alisa',
+			 }
+		];
+
+
+		users.map(function(item) { 
+		 return item.date = item.date.split('/').reverse().join('/');
+		 });
+
+		users.sort(function(a, b) {
+			var dateA = new Date(a.date), dateB = new Date(b.date);
+			return dateA - dateB;
+		});
+
+		console.log (users);
+
 	</script>
 	</body>
 </html>
